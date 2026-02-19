@@ -12,14 +12,11 @@ import fileUpload from "express-fileupload";
 const app = express();
 config({ path: "./config/config.env" });
 
-app.use(
-  cors({
-    // Localhost aur Vercel dono URLs ko allow karein
-    origin: [process.env.FRONTEND_URL, "http://localhost:5173"], 
-    methods: ["GET", "POST", "DELETE", "PUT"], // 'method' ko 'methods' (plural) karein
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: ["https://job-portal-mern-leufzl8ur-pawan-prasad-sahus-projects.vercel.app"],
+  methods: ["GET", "POST", "DELETE", "PUT"],
+  credentials: true
+}));
 
 app.use(cookieParser());
 app.use(express.json());
