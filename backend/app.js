@@ -14,8 +14,9 @@ config({ path: "./config/config.env" });
 
 app.use(
   cors({
-    origin: [process.env.FRONTEND_URL],
-    method: ["GET", "POST", "DELETE", "PUT"],
+    // Localhost aur Vercel dono URLs ko allow karein
+    origin: [process.env.FRONTEND_URL, "http://localhost:5173"], 
+    methods: ["GET", "POST", "DELETE", "PUT"], // 'method' ko 'methods' (plural) karein
     credentials: true,
   })
 );
