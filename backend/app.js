@@ -13,7 +13,7 @@ const app = express();
 config({ path: "./config/config.env" });
 
 app.use(cors({
-  origin: [process.env.FRONTEND_URL, "http://localhost:5173", 
+  origin: [process.env.FRONTEND_URL, 
   "https://job-portal-mern-alpha.vercel.app", 
     "http://localhost:5173"
   ],
